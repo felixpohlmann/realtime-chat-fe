@@ -15,16 +15,24 @@
   /*strech app component over complete screen*/
   height: 100vh;
   display: flex;
+  background-color: var(--primary);
+  overflow: hidden;
 }
 
-.sidebar {
+.app__sidebar {
   width: 10%;
   height: 100%;
   min-width: 80px;
   transition: 0.2s ease-in-out;
+  overflow: auto;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-.main {
+.app__main {
   width: 90%;
   height: 100%;
   background-color: purple;

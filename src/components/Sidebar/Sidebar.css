@@ -1,0 +1,31 @@
+.sidebar {
+}
+
+.sidebar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts {
+  width: 100%;
+}
+
+.contact {
+  width: 60%;
+  /* padding-bottom to keep aspect ratio */
+  padding-bottom: 60%;
+  height: 2rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  text-align: center;
+  margin: 1rem 0 1rem 0;
+  box-shadow: 6px 6px 7px 0 #a3b1c6, -6px -6px 7px 0 #ffffff;
+  transition: 0.5s ease-in-out;
+}
+
+.contact:hover {
+  box-shadow: 6px 6px 16px 0 #a3b1c6, -6px -6px 16px 0 #ffffff;
+  transition: 0.5s ease-in-out;
+}
