@@ -14,6 +14,7 @@
 .app {
   /*strech app component over complete screen*/
   height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   background-color: var(--primary);
   overflow: hidden;
@@ -40,6 +41,24 @@
   transition: 0.2s ease-in-out;
   box-shadow: 6px 6px 12px 0 var(--dark-shadow),
     -6px -6px 12px 0 var(--light-shadow);
+}
+
+.chat {
+  height: 85%;
+  background-color: var(--primary);
+}
+
+.chat__header {
+  height: 20%;
+}
+
+.chat__messages {
+  height: 80%;
+}
+
+.message {
+  height: 15%;
+  background-color: green;
 }
 
 /* mobile phones */

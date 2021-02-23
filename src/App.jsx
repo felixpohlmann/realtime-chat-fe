@@ -12,7 +12,12 @@ const App = () => {
       <div className="app__sidebar">
         <Sidebar />
       </div>
-      <div className="app__main"></div>
+      <div className="app__main">
+        <div className="chat">
+          <div className="chat__header">chat header</div>
+          <div className="chat__messages">chat messages</div>
+        </div>
+      </div>
     </div>
   );
 };
