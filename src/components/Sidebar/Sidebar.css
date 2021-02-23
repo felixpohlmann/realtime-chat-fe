@@ -1,6 +1,3 @@
-.sidebar {
-}
-
 .sidebar ul {
   list-style-type: none;
   display: flex;
@@ -16,8 +13,9 @@
   width: 60%;
   /* padding-bottom to keep aspect ratio */
   padding-bottom: 60%;
-  height: 2rem;
   background-color: var(--primary);
+  height: 2rem;
+
   border-radius: 50%;
   text-align: center;
   margin: 1rem 0 1rem 0;

@@ -2,9 +2,13 @@ import React from "react";
 
 //components
 import Sidebar from "./components/Sidebar/Sidebar";
+import Message from "./components/Message/Message";
 
 //css
 import "./App.css";
+
+//sampleData
+import sampleData from "./sampleData";
 
 const App = () => {
   return (
@@ -14,8 +18,31 @@ const App = () => {
       </div>
       <div className="app__main">
         <div className="chat">
-          <div className="chat__header">chat header</div>
-          <div className="chat__messages">chat messages</div>
+          <div className="chat__header">
+            <div className="contact__pic"></div>
+            <div className="contact__name">
+              <p>John Due</p>
+            </div>
+          </div>
+          <div className="chat__messages">
+            <ul>
+              {sampleData.map((message, index) => (
+                <li
+                  key={index}
+                  style={{
+                    justifyContent: message.received
+                      ? "flex-start"
+                      : "flex-end",
+                  }}
+                >
+                  <Message
+                    content={message.content}
+                    received={message.received}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -1,14 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
 :root {
   --primary: #e0e5ec;
   --secondary: #b9bec6;
   --light-shadow: #ffffff;
   --dark-shadow: #a3b1c6;
+  --font-light: #9a9fa4;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 .app {
@@ -21,7 +25,7 @@
 }
 
 .app__sidebar {
-  width: 10%;
+  width: 5%;
   height: 100%;
   min-width: 80px;
   transition: 0.2s ease-in-out;
@@ -34,10 +38,11 @@
 }
 
 .app__main {
-  width: 90%;
+  width: 95%;
   height: 100%;
   background-color: var(--primary);
   border-radius: 2rem 0 0 2rem;
+
   transition: 0.2s ease-in-out;
   box-shadow: 6px 6px 12px 0 var(--dark-shadow),
     -6px -6px 12px 0 var(--light-shadow);
@@ -46,19 +51,44 @@
 .chat {
   height: 85%;
   background-color: var(--primary);
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 2rem 0 0 2rem;
 }
 
 .chat__header {
   height: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.contact__pic {
+  width: 5%;
+  /* padding-bottom to keep aspect ratio */
+  padding-bottom: 5%;
+  border-radius: 50%;
+  box-shadow: 6px 6px 7px 0 #a3b1c6, -6px -6px 7px 0 #ffffff;
+}
+
+.contact__name {
+  margin: 1rem;
+  font-size: 200%;
 }
 
 .chat__messages {
   height: 80%;
+  padding: 0 2rem 0 2rem;
+  overflow: scroll;
+  scrollbar-width: none;
+  box-shadow: inset -6px -6px 16px 0 #ffffff, inset 6px 6px 16px 0 #a3b1c6;
+  border-radius: 2rem;
 }
 
-.message {
-  height: 15%;
-  background-color: green;
+.chat__messages ul {
+  list-style-type: none;
+}
+
+.chat__messages ul li {
+  display: flex;
 }
 
 /* mobile phones */
