@@ -24,4 +24,3 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-/* Sketch doesnt export pattern fills at this point */

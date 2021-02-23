@@ -21,8 +21,9 @@
   border-radius: 50%;
   text-align: center;
   margin: 1rem 0 1rem 0;
-  box-shadow: 6px 6px 7px 0 #a3b1c6, -6px -6px 7px 0 #ffffff;
   transition: 0.5s ease-in-out;
+  box-shadow: 6px 6px 7px 0 #a3b1c6, -6px -6px 7px 0 #ffffff;
+  cursor: pointer;
 }
 
 .contact:hover {
