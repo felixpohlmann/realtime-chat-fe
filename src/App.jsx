@@ -24,7 +24,7 @@ const App = () => {
           <div className="chat__header">
             <div className="contact__pic"></div>
             <div className="contact__name">
-              <p>John Due</p>
+              <p>Däle</p>
             </div>
           </div>
           <div className="chat__messages">
