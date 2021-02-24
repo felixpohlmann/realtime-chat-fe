@@ -7,6 +7,9 @@ import Message from "./components/Message/Message";
 //css
 import "./App.css";
 
+//svg
+import sendIcon from "./svg/send.svg";
+
 //sampleData
 import sampleData from "./sampleData";
 
@@ -43,6 +46,12 @@ const App = () => {
               ))}
             </ul>
           </div>
+        </div>
+        <div className="input">
+          <input type="text" placeholder="Message" />
+          <button>
+            <img src={sendIcon} alt="send message" />
+          </button>
         </div>
       </div>
     </div>

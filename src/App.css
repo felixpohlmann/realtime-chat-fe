@@ -91,6 +91,53 @@
   display: flex;
 }
 
+.input {
+  height: 15%;
+  background-color: var(--primary);
+  padding: 1rem 2rem 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input input {
+  height: 50%;
+  width: 90%;
+  font-size: 1rem;
+  padding-left: 1rem;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  box-shadow: inset -6px -6px 16px 0 #ffffff, inset 6px 6px 16px 0 #a3b1c6;
+  background-color: var(--primary);
+}
+
+.input button {
+  height: 50%;
+  width: 5%;
+  box-shadow: 6px 6px 7px 0 #a3b1c6, -6px -6px 7px 0 #ffffff;
+  background-color: var(--primary);
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.input button:hover {
+  box-shadow: 6px 6px 16px 0 #a3b1c6, -6px -6px 16px 0 #ffffff;
+  transition: 0.2s ease-in-out;
+}
+
+.input button img {
+  width: 50%;
+}
+
+/* responsive settings */
+
 /* mobile phones */
 @media (max-width: 420px) {
 }
