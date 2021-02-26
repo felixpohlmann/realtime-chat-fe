@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Message from "./components/Message/Message";
 
+//services
+import messageService from "./services/message.service";
+
 //css
 import "./App.css";
 
@@ -17,7 +20,7 @@ const App = () => {
   const [message, setMessage] = useState(null);
 
   const handleMessage = () => {
-    console.log(message);
+    messageService.storeMessage(message);
   };
   return (
     <div className="app">
