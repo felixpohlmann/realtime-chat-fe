@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //components
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -13,15 +13,27 @@ import "./App.css";
 //svg
 import sendIcon from "./svg/send.svg";
 
-//sampleData
-import sampleData from "./sampleData";
-
 const App = () => {
   const [message, setMessage] = useState(null);
+  const [messages, setMessages] = useState(null);
+
+  useEffect(() => {
+    const getMessages = async () => {
+      const data = await messageService.getMessages();
+      setMessages(data);
+      console.log(messages);
+    };
+    getMessages();
+  });
 
   const handleMessage = () => {
     messageService.storeMessage(message);
   };
+
+  if (!messages) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className="app">
       <div className="app__sidebar">
@@ -37,19 +49,9 @@ const App = () => {
           </div>
           <div className="chat__messages">
             <ul>
-              {sampleData.map((message, index) => (
-                <li
-                  key={index}
-                  style={{
-                    justifyContent: message.received
-                      ? "flex-start"
-                      : "flex-end",
-                  }}
-                >
-                  <Message
-                    content={message.content}
-                    received={message.received}
-                  />
+              {messages.map((message, index) => (
+                <li key={index}>
+                  <Message content={message.content} />
                 </li>
               ))}
             </ul>
