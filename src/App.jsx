@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //components
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -14,6 +14,11 @@ import sendIcon from "./svg/send.svg";
 import sampleData from "./sampleData";
 
 const App = () => {
+  const [message, setMessage] = useState(null);
+
+  const handleMessage = () => {
+    console.log(message);
+  };
   return (
     <div className="app">
       <div className="app__sidebar">
@@ -24,7 +29,7 @@ const App = () => {
           <div className="chat__header">
             <div className="contact__pic"></div>
             <div className="contact__name">
-              <p>Däle</p>
+              <p>Dälen-Chat</p>
             </div>
           </div>
           <div className="chat__messages">
@@ -48,8 +53,12 @@ const App = () => {
           </div>
         </div>
         <div className="input">
-          <input type="text" placeholder="Message" />
-          <button>
+          <input
+            type="text"
+            placeholder="Message"
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <button onClick={handleMessage}>
             <img src={sendIcon} alt="send message" />
           </button>
         </div>
