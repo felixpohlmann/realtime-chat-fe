@@ -27,7 +27,10 @@ const App = () => {
   });
 
   const handleMessage = () => {
-    messageService.storeMessage(message);
+    if (message) {
+      messageService.storeMessage(message);
+      setMessage("");
+    }
   };
 
   if (!messages) {
@@ -62,6 +65,7 @@ const App = () => {
             type="text"
             placeholder="Message"
             onChange={(e) => setMessage(e.target.value)}
+            value={message}
           />
           <button onClick={handleMessage}>
             <img src={sendIcon} alt="send message" />
