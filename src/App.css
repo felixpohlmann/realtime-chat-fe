@@ -78,6 +78,7 @@
   height: 80%;
   padding: 0 2rem 0 2rem;
   overflow: scroll;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   box-shadow: inset -6px -6px 16px 0 #ffffff, inset 6px 6px 16px 0 #a3b1c6;
   border-radius: 2rem;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 //components
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -17,9 +17,13 @@ const App = () => {
   const [message, setMessage] = useState(null);
   const [messages, setMessages] = useState(null);
 
+  const chatContainer = useRef(0);
+  
+
   useEffect(async () => {
     const result = await messagesService.getMessages();
     setMessages(result);
+    scrollDown();
   }, []);
 
   const handleMessage = () => {
@@ -27,6 +31,13 @@ const App = () => {
       messagesService.storeMessage(message);
       setMessage("");
     }
+    scrollDown();
+  };
+
+  const scrollDown = () => {
+    const scroll =
+      chatContainer.current.scrollHeight - chatContainer.current.clientHeight;
+    chatContainer.current.scrollTo(0, scroll);
   };
 
   if (!messages) {
@@ -46,7 +57,7 @@ const App = () => {
               <p>Dälen-Chat</p>
             </div>
           </div>
-          <div className="chat__messages">
+          <div className="chat__messages" ref={chatContainer}>
             <ul>
               {messages.map((message, index) => (
                 <li key={index}>
