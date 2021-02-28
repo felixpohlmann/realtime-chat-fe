@@ -18,12 +18,20 @@ const App = () => {
   const [messages, setMessages] = useState(null);
 
   const chatContainer = useRef(0);
-  
+
+  let intervalID = null;
 
   useEffect(async () => {
     const result = await messagesService.getMessages();
     setMessages(result);
     scrollDown();
+
+    const interval = setInterval(async () => {
+      const result = await messagesService.getMessages();
+      setMessages(result);
+      scrollDown();
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   const handleMessage = () => {
@@ -34,6 +42,11 @@ const App = () => {
     scrollDown();
   };
 
+  const getData = async () => {
+    const result = await messagesService.getMessages();
+    setMessages(result);
+  };
+
   const scrollDown = () => {
     const scroll =
       chatContainer.current.scrollHeight - chatContainer.current.clientHeight;
@@ -41,7 +54,7 @@ const App = () => {
   };
 
   if (!messages) {
-    return <p>Loading...</p>;
+    return <p>Loading... ihr keks</p>;
   }
 
   return (
