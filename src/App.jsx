@@ -14,7 +14,7 @@ import "./App.css";
 import sendIcon from "./svg/send.svg";
 
 const App = () => {
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState("");
   const [messages, setMessages] = useState(null);
 
   const chatContainer = useRef(0);
@@ -42,9 +42,10 @@ const App = () => {
     scrollDown();
   };
 
-  const getData = async () => {
-    const result = await messagesService.getMessages();
-    setMessages(result);
+  const onKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleMessage();
+    }
   };
 
   const scrollDown = () => {
@@ -86,6 +87,7 @@ const App = () => {
             placeholder="Message"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
+            onKeyPress={(e) => onKeyPress(e)}
           />
           <button onClick={handleMessage}>
             <img src={sendIcon} alt="send message" />
