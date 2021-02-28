@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Message from "./components/Message/Message";
 
 //services
-import messageService from "./services/message.service";
+import messagesService from "./services/messages.service";
 
 //css
 import "./App.css";
@@ -17,18 +17,14 @@ const App = () => {
   const [message, setMessage] = useState(null);
   const [messages, setMessages] = useState(null);
 
-  useEffect(() => {
-    const getMessages = async () => {
-      const data = await messageService.getMessages();
-      setMessages(data);
-      console.log(messages);
-    };
-    getMessages();
-  });
+  useEffect(async () => {
+    const result = await messagesService.getMessages();
+    setMessages(result);
+  }, []);
 
   const handleMessage = () => {
     if (message) {
-      messageService.storeMessage(message);
+      messagesService.storeMessage(message);
       setMessage("");
     }
   };
