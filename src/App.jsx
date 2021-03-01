@@ -19,8 +19,6 @@ const App = () => {
 
   const chatContainer = useRef(0);
 
-  let intervalID = null;
-
   useEffect(async () => {
     const result = await messagesService.getMessages();
     setMessages(result);
