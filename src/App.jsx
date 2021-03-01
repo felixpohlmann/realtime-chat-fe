@@ -26,7 +26,9 @@ const App = () => {
     scrollDown();
 
     const socket = io("http://localhost:5000/");
-    console.log(socket);
+    socket.on("testemit", (data) => {
+      console.log("event");
+    });
   }, []);
 
   const handleMessage = () => {
