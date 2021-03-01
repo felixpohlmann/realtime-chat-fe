@@ -23,13 +23,6 @@ const App = () => {
     const result = await messagesService.getMessages();
     setMessages(result);
     scrollDown();
-
-    const interval = setInterval(async () => {
-      const result = await messagesService.getMessages();
-      setMessages(result);
-      scrollDown();
-    }, 5000);
-    return () => clearInterval(interval);
   }, []);
 
   const handleMessage = () => {
