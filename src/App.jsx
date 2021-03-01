@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import io from "socket.io-client";
 
 //components
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -23,6 +24,9 @@ const App = () => {
     const result = await messagesService.getMessages();
     setMessages(result);
     scrollDown();
+
+    const socket = io("http://localhost:5000/");
+    console.log(socket);
   }, []);
 
   const handleMessage = () => {
