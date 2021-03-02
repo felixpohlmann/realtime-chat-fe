@@ -1,11 +1,13 @@
 import axios from "axios";
 
+import apiConfig from "../config/api.config";
+
 function storeMessage(message) {
-  axios.post("http://localhost:5000/messages", { content: message });
+  axios.post(`${apiConfig.apiEnpointLocal}/messages`, { content: message });
 }
 
 async function getMessages() {
-  const result = await axios.get("http://localhost:5000/messages");
+  const result = await axios.get(`${apiConfig.apiEnpointLocal}/messages`);
   return result.data;
 }
 

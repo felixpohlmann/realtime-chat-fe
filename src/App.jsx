@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 
+//config
+import apiConfig from "./config/api.config";
+
 //components
 import Sidebar from "./components/Sidebar/Sidebar";
 import Message from "./components/Message/Message";
@@ -25,9 +28,11 @@ const App = () => {
     setMessages(result);
     scrollDown();
 
-    const socket = io("http://localhost:5000/");
-    socket.on("testemit", (data) => {
-      console.log("event");
+    const socket = io(`${apiConfig.apiEnpointLocal}/messages`);
+    socket.on("newMessage", async (data) => {
+      const result = await messagesService.getMessages();
+      setMessages(result);
+      scrollDown();
     });
   }, []);
 
@@ -52,7 +57,7 @@ const App = () => {
   };
 
   if (!messages) {
-    return <p>Loading... ihr keks</p>;
+    return <p>Loading...</p>;
   }
 
   return (
