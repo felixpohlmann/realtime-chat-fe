@@ -23,7 +23,7 @@ const Login = () => {
         <p>Welcome</p>
         <input
           type="text"
-          placeholder="choose a username"
+          placeholder="Choose a username"
           onChange={(e) => setUsername(e.target.value)}
           onKeyPress={onKeyPress}
         />
