@@ -11,6 +11,12 @@ const Login = () => {
     history.push("chat", { username });
   };
 
+  const onKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleRedirect();
+    }
+  };
+
   return (
     <div className="login">
       <div>
@@ -19,6 +25,7 @@ const Login = () => {
           type="text"
           placeholder="choose a username"
           onChange={(e) => setUsername(e.target.value)}
+          onKeyPress={onKeyPress}
         />
         <button onClick={handleRedirect}>Login</button>
       </div>

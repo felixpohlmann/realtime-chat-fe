@@ -9,6 +9,7 @@ const Router = () => {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/chat" render={(props) => <App {...props} />} />
+        <Route path="/" component={Login} />
       </Switch>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Redirect } from "react-router-dom";
 import io from "socket.io-client";
 
 //config
@@ -25,6 +26,11 @@ const App = (props) => {
   const chatContainer = useRef(0);
 
   useEffect(async () => {
+    /* use hook conditionally */
+    if (!props.location.state) return;
+
+    setUsername(props.location.state.username);
+
     const result = await messagesService.getMessages();
     setMessages(result);
     scrollDown();
@@ -59,6 +65,10 @@ const App = (props) => {
     chatContainer.current.scrollTo(0, scroll);
   };
 
+  if (!props.location.state) {
+    return <Redirect to="/login" />;
+  }
+
   if (!messages) {
     return <p>Loading...</p>;
   }
@@ -76,7 +86,7 @@ const App = (props) => {
               <p>Chat</p>
             </div>
             {/* temporary */}
-            <p className="Username">User: {props.location.state.username}</p>
+            <p className="Username">User: {username}</p>
           </div>
           <div className="chat__messages" ref={chatContainer}>
             <ul>
