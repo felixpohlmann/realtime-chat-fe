@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 :root {
+  /* colors */
   --primary: #e0e5ec;
   --secondary: #b9bec6;
   --light-shadow: #ffffff;
   --dark-shadow: #a3b1c6;
   --font-light: #9a9fa4;
+
+  /* transitions */
+  --button-transition: 0.3s;
 }

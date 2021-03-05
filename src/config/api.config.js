@@ -1,3 +1,3 @@
 export default {
-  apiEnpointLocal: "http://localhost:5000",
+  apiEnpointLocal: "http://192.168.0.104:5000",
 };
