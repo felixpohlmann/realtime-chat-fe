@@ -32,7 +32,7 @@
 
 .login input {
   width: 80%;
-  padding: 0.5rem 0 0.5rem 1rem;
+  padding: 0.75rem 0 0.75rem 1rem;
   margin-bottom: 1rem;
   border-radius: 2rem;
   border: none;
@@ -40,7 +40,6 @@
   box-shadow: inset -6px -6px 16px 0 #ffffff, inset 6px 6px 16px 0 #a3b1c6;
   background-color: var(--primary);
   font-size: 1rem;
-  color: var(--font-light);
 }
 
 .login button {
@@ -53,9 +52,9 @@
   outline: none;
   text-align: center;
   cursor: pointer;
-  font-size: 1rem;
-  color: var(--font-light);
+  font-size: 1.5rem;
   transition: var(--button-transition) ease-in-out;
+  color: var(--font);
 }
 
 button:hover {

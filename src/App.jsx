@@ -101,7 +101,7 @@ const App = (props) => {
         <div className="input">
           <input
             type="text"
-            placeholder="Message"
+            placeholder="Message1"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
             onKeyPress={(e) => onKeyPress(e)}
