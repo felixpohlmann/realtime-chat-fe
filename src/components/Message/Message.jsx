@@ -5,8 +5,8 @@ import "./Message.css";
 const Message = (props) => {
   return (
     <div className="message">
-      <p className="content">{props.content}</p>
-      <p className="time">17:24</p>
+      <p className="content">{props.message.content}</p>
+      {props.showName ? <p className="time">{props.message.sentby}</p> : null}
     </div>
   );
 };

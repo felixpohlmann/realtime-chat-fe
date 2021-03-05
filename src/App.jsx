@@ -95,7 +95,10 @@ const App = (props) => {
                   key={index}
                   className={message.sentby === username ? "sent" : ""}
                 >
-                  <Message content={message.content} />
+                  <Message
+                    showName={message.sentby === username ? false : true}
+                    message={message}
+                  />
                 </li>
               ))}
             </ul>
