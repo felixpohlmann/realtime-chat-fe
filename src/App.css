@@ -91,6 +91,11 @@
   display: flex;
 }
 
+/* reverse flex direction on sent messages (equals float:right in this manner) */
+.sent {
+  flex-direction: row-reverse;
+}
+
 .input {
   height: 15%;
   background-color: var(--primary);

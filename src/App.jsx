@@ -91,7 +91,10 @@ const App = (props) => {
           <div className="chat__messages" ref={chatContainer}>
             <ul>
               {messages.map((message, index) => (
-                <li key={index}>
+                <li
+                  key={index}
+                  className={message.sentby === username ? "sent" : ""}
+                >
                   <Message content={message.content} />
                 </li>
               ))}
