@@ -8,6 +8,7 @@ const Router = () => {
     <div className="router">
       <Switch>
         <Route path="/login" component={Login} />
+        <Route path="/chat" component={App} />
         <Route path="/" component={App} />
       </Switch>
     </div>
