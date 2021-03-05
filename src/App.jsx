@@ -47,7 +47,7 @@ const App = (props) => {
 
   const handleMessage = () => {
     if (message) {
-      messagesService.storeMessage(message);
+      messagesService.storeMessage(message, username);
       setMessage("");
     }
     scrollDown();
@@ -101,7 +101,7 @@ const App = (props) => {
         <div className="input">
           <input
             type="text"
-            placeholder="Message1"
+            placeholder="Message"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
             onKeyPress={(e) => onKeyPress(e)}

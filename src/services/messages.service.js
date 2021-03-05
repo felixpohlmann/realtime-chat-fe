@@ -2,8 +2,11 @@ import axios from "axios";
 
 import apiConfig from "../config/api.config";
 
-function storeMessage(message) {
-  axios.post(`${apiConfig.apiEnpointLocal}/messages`, { content: message });
+function storeMessage(content, username) {
+  axios.post(`${apiConfig.apiEnpointLocal}/messages`, {
+    content,
+    username,
+  });
 }
 
 async function getMessages() {
