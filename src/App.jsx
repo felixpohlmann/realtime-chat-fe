@@ -70,7 +70,7 @@ const App = () => {
           <div className="chat__header">
             <div className="contact__pic"></div>
             <div className="contact__name">
-              <p>Dälen-Chat</p>
+              <p>Chat</p>
             </div>
           </div>
           <div className="chat__messages" ref={chatContainer}>

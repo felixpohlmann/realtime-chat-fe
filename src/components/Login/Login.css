@@ -30,7 +30,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-input {
+.login input {
   width: 80%;
   padding: 0.5rem 0 0.5rem 1rem;
   margin-bottom: 1rem;
@@ -43,7 +43,7 @@ input {
   color: var(--font-light);
 }
 
-button {
+.login button {
   width: 80%;
   padding: 0.5rem 0 0.5rem 0;
   box-shadow: 6px 6px 7px 0 #a3b1c6, -6px -6px 7px 0 #ffffff;
