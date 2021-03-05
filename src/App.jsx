@@ -17,9 +17,10 @@ import "./App.css";
 //svg
 import sendIcon from "./svg/send.svg";
 
-const App = () => {
+const App = (props) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState(null);
+  const [username, setUsername] = useState("Hallo Welt");
 
   const chatContainer = useRef(0);
 
@@ -34,6 +35,8 @@ const App = () => {
       setMessages(result);
       scrollDown();
     });
+
+    console.log(props);
   }, []);
 
   const handleMessage = () => {
@@ -72,6 +75,8 @@ const App = () => {
             <div className="contact__name">
               <p>Chat</p>
             </div>
+            {/* temporary */}
+            <p className="Username">User: {props.location.state.username}</p>
           </div>
           <div className="chat__messages" ref={chatContainer}>
             <ul>

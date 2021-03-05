@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 import App from "./App";
 import Login from "./components/Login/Login";
 
@@ -8,8 +8,7 @@ const Router = () => {
     <div className="router">
       <Switch>
         <Route path="/login" component={Login} />
-        <Route path="/chat" component={App} />
-        <Route path="/" component={App} />
+        <Route path="/chat" render={(props) => <App {...props} />} />
       </Switch>
     </div>
   );
