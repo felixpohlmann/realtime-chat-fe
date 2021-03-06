@@ -1,4 +1,8 @@
+const apiEndpoint =
+  process.env.NODE_ENV === "production"
+    ? apiConfig.apiEnpointProduction
+    : apiConfig.apiEnpointLocal;
+
 export default {
-  apiEnpointLocal: "http://localhost:5000",
-  apiEnpointProduction: "http://realtime-chat-be.herokuapp.com/",
+  apiEndpoint,
 };

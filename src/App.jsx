@@ -34,7 +34,7 @@ const App = (props) => {
     setMessages(result);
     scrollDown();
 
-    const socket = io(`${apiConfig.apiEnpointLocal}`);
+    const socket = io(`${apiConfig.apiEnpoint}`);
     socket.on("newMessage", async (data) => {
       const result = await messagesService.getMessages();
       setMessages(result);

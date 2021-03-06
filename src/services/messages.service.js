@@ -2,10 +2,7 @@ import axios from "axios";
 
 import apiConfig from "../config/api.config";
 
-const apiEndpoint =
-  process.env.NODE_ENV === "production"
-    ? apiConfig.apiEnpointProduction
-    : apiConfig.apiEnpointLocal;
+const { apiEndpoint } = apiConfig;
 
 function storeMessage(content, username) {
   axios.post(`${apiEndpoint}/messages`, {
