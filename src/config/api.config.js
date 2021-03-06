@@ -1,3 +1,4 @@
 export default {
-  apiEnpointLocal: "http://192.168.178.35:5000",
+  apiEnpointLocal: "http://localhost:5000",
+  apiEnpointProduction: "http://realtime-chat-be.herokuapp.com/",
 };

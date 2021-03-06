@@ -21,7 +21,7 @@ import sendIcon from "./svg/send.svg";
 const App = (props) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState(null);
-  const [username, setUsername] = useState("Hallo Welt");
+  const [username, setUsername] = useState("");
 
   const chatContainer = useRef(0);
 
@@ -30,7 +30,6 @@ const App = (props) => {
     if (!props.location.state) return;
 
     setUsername(props.location.state.username);
-
     const result = await messagesService.getMessages();
     setMessages(result);
     scrollDown();
