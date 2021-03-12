@@ -40,8 +40,6 @@ const App = (props) => {
       setMessages(result);
       scrollDown();
     });
-
-    console.log(props);
   }, []);
 
   const handleMessage = () => {
