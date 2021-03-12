@@ -34,7 +34,7 @@ const App = (props) => {
     setMessages(result);
     scrollDown();
 
-    const socket = io(`${apiConfig.apiEnpoint}`);
+    const socket = io("https://realtime-chat-be.herokuapp.com/");
     socket.on("newMessage", async (data) => {
       const result = await messagesService.getMessages();
       setMessages(result);
